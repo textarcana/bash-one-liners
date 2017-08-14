@@ -1,3 +1,3 @@
 # Use jq to merge the two JSON files.
 
-jq --slurp '.[0] as $foo | .[1] as $bar | .' foo.json bar.json
+jq -n '$old - $new' --slurpfile old foo.json --slurpfile new bar.json
